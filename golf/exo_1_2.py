@@ -1,1 +1,1 @@
-_=lambda s,t:sort(s)==sort(t)
+_=lambda s,t:sorted(s)==sorted(t)

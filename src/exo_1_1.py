@@ -6,7 +6,7 @@ def uniq2(s):
     for i in s:
         if i in all:
             return False
-        all.add(s)
+        all.add(i)
     return True
 
 def uniq3(s):
