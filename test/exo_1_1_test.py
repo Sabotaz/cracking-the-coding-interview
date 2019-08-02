@@ -1,28 +1,15 @@
 import unittest
-from ddt import ddt, data
+from ddt import ddt, data, unpack
 from src.exo_1_1 import uniq, uniq2, uniq3
+from golf.exo_1_1 import _ as uniq_golf
 
 @ddt
 class UniqTestCase(unittest.TestCase):
-    @data("abc d")
-    def test_uniq(self, value):
-        self.assertTrue(uniq(value))
+    @data(uniq, uniq2, uniq3, uniq_golf)
+    def test_uniq(self, method):
+        self.assertTrue(method("abc d"))
 
-    @data("aba", "  ")
-    def test_not_uniq(self, value):
-        self.assertFalse(uniq(value))
-
-    @data("abc d")
-    def test_uniq2(self, value):
-        self.assertTrue(uniq2(value))
-
-    @data("aba", "  ")
-    def test_not_uniq2(self, value):
-        self.assertFalse(uniq2(value))
-    @data("abc d")
-    def test_uniq3(self, value):
-        self.assertTrue(uniq3(value))
-
-    @data("aba", "  ")
-    def test_not_uniq3(self, value):
-        self.assertFalse(uniq3(value))
+    @data(uniq, uniq2, uniq3, uniq_golf)
+    def test_not_uniq(self, method):
+        self.assertFalse(method("aba"))
+        self.assertFalse(method("  "))
