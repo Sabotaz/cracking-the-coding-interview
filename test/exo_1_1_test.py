@@ -1,5 +1,5 @@
 import unittest
-from ddt import ddt, data, unpack
+from ddt import ddt, data
 from src.exo_1_1 import uniq, uniq2, uniq3
 from golf.exo_1_1 import _ as uniq_golf
 
